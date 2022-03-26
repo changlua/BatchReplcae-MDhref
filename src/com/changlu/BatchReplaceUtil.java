@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  * @ClassName updateMD
  * @Author ChangLu
  * @Date 3/26/2022 11:42 AM
- * @Description TODO
+ * @Description 批量替换MD图片路径工具
  */
 public class BatchReplaceUtil {
 
@@ -26,15 +26,17 @@ public class BatchReplaceUtil {
 
     //源目录
     private static String COPY_ORIGN = "C:\\Users\\93997\\Desktop\\test";
+
     //目标目录
     private static String COPY_TO = "C:\\Users\\93997\\Desktop\\test";
 
-    private static String tihuan = "https://pictured-bed.oss-cn-beijing.aliyuncs.com/img/beifen-gitee/";  //测试
-//    private static String tihuan = "https://gitee.com/changluJava/picture-bed/raw/master/";
+    //被替换内容
+//    private static String tihuan = "https://pictured-bed.oss-cn-beijing.aliyuncs.com/img/beifen-gitee/";  //测试
+    private static String tihuan = "https://gitee.com/changluJava/picture-bed/raw/master/";
 
     //替换内容
-    private static String tihuanTO = "https://gitee.com/changluJava/picture-bed/raw/master/";   //测试
-//    private static String tihuanTO = "https://pictured-bed.oss-cn-beijing.aliyuncs.com/img/beifen-gitee/";
+//    private static String tihuanTO = "https://gitee.com/changluJava/picture-bed/raw/master/";   //测试
+    private static String tihuanTO = "https://pictured-bed.oss-cn-beijing.aliyuncs.com/img/beifen-gitee/";
 
  
     public static void main(String[] args) throws Exception{
