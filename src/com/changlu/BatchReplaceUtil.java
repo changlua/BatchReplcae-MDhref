@@ -3,12 +3,11 @@ import java.io.*;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Properties;
 import java.util.logging.Logger;
 
 /**
  * 效果：将源目录所有md文件内容中tihuan配置内容替换为tihuanTO内容，最终输出到指定路径。
- * 配置说明：
+ * 配置说明：填写四个配置即可
  *   COPY_ORIGN：源目录
  *   COPY_ORIGN：目标输出目录(可填自己源目录)
  *   tihuan：被替换内容
@@ -21,19 +20,21 @@ import java.util.logging.Logger;
  * @Date 3/26/2022 11:42 AM
  * @Description TODO
  */
-public class updateMD {
+public class BatchReplaceUtil {
 
     private static Logger log = Logger.getLogger("com.changlu.updateMD");
 
     //源目录
-    private static String COPY_ORIGN = "C:\\Users\\93997\\Desktop\\test2";
+    private static String COPY_ORIGN = "C:\\Users\\93997\\Desktop\\test";
     //目标目录
-    private static String COPY_TO = "C:\\Users\\93997\\Desktop\\test2";
-//    private static String tihuan = "https://pictured-bed.oss-cn-beijing.aliyuncs.com/img/beifen-gitee/";
-    private static String tihuan = "https://gitee.com/changluJava/picture-bed/raw/master/";
+    private static String COPY_TO = "C:\\Users\\93997\\Desktop\\test";
+
+    private static String tihuan = "https://pictured-bed.oss-cn-beijing.aliyuncs.com/img/beifen-gitee/";  //测试
+//    private static String tihuan = "https://gitee.com/changluJava/picture-bed/raw/master/";
+
     //替换内容
-//    private static String tihuanTO = "https://gitee.com/changluJava/picture-bed/raw/master/";
-    private static String tihuanTO = "https://pictured-bed.oss-cn-beijing.aliyuncs.com/img/beifen-gitee/";
+    private static String tihuanTO = "https://gitee.com/changluJava/picture-bed/raw/master/";   //测试
+//    private static String tihuanTO = "https://pictured-bed.oss-cn-beijing.aliyuncs.com/img/beifen-gitee/";
 
  
     public static void main(String[] args) throws Exception{
@@ -50,6 +51,7 @@ public class updateMD {
                 }else{
                     //System.out.println("原路径：" + path.toFile().getAbsolutePath() + "  ，目标路径：" + copyFileName);
                     if (targetFile.contains(".md")){
+                        //执行替换任务
 //                        doWork(originFile, targetFile, tihuanTO, tihuan);
                         doWork(originFile, targetFile, tihuan, tihuanTO);
                         System.out.println(targetFile + "已经覆盖完成!");
